@@ -1,5 +1,6 @@
 import GameCard from "../components/GameCard";
 import { getGames } from "../services/api";
+import {useState, useEffect} from "react";
 
 export default function Home() {
   const [games, setGames] = useState([]);
