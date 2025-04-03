@@ -3,17 +3,15 @@ export async function getGames() {
   const options = {
     method: "GET",
     headers: {
+      "x-rapidapi-key": "079a0b2de3msh73c2b064e59ab40p14d16fjsn75a0a152d762",
       "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
     },
   };
-  let result = {};
-
+  let result;
   try {
     const response = await fetch(url, options);
     result = await response.json();
-    console.log(result);
   } catch (error) {
-    console.erro;
     console.error(error);
   }
   return result;
