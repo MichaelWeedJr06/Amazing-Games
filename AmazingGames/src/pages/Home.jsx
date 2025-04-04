@@ -1,6 +1,7 @@
 import GameCard from "../components/GameCard";
 import { getGames } from "../services/api";
 import { useState, useEffect } from "react";
+import "../css/Home.css";
 
 export default function Home() {
   const [games, setGames] = useState([]);
@@ -20,7 +21,7 @@ export default function Home() {
     };
     GetGames();
   }, []);
-  if (loading == true) return <p>loading.....</p>;
+  if (loading == true) return <h2>loading.....</h2>;
   if (error != null) return <p>error:{error}</p>;
   return (
     <div className="grid">
