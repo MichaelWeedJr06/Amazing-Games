@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getGame } from "../services/api";
 import "bootstrap/dist/css/bootstrap.min.css"; // Make sure Bootstrap CSS is imported
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../css/Game.css"
 export default function Game({ gameID }) {
   const [game, setGame] = useState({});
   const [error, setError] = useState(null);
@@ -29,7 +30,7 @@ export default function Game({ gameID }) {
         <div className="loading">Loading....</div>
       ) : (
         <div className="container">
-          <div className="title">{game.title}</div>
+          <div className="game-title">{game.title}</div>
           <div className="thumbnail">
             <img
               src={game.thumbnail}
@@ -37,25 +38,28 @@ export default function Game({ gameID }) {
               className="thumbnail-img"
             />
           </div>
-          <div className="genre">Genre: {game.genre}</div>
-          <div className="links row">
-            <a href={game.game_url}>Game Url</a>
+          <h5 className="genre">Genre: <span className="text">{game.genre}</span></h5>
+          <div className="links">
+            <a className="game_url" href={game.game_url}>Game Url</a>
 
             <a href={game.freetogame_profile_url}>
               Free to Game {game.title}'s game profile
             </a>
           </div>
           <div className="release-date-and-platform">
-            <div className="release-date">
-              Release Date: {game.release_date}
-            </div>
-            <div className="platform">Platform: {game.platform}</div>
+            <h5 className="release-date">
+              Release Date: <span className="text">{game.release_date}</span>
+            </h5>
+            <h5 className="platform">Platform: <span className="text">{game.platform}</span></h5>
           </div>
           <div className="publisher-and-developer">
-            <div className="publisher">Publisher: {game.publisher}</div>
-            <div className="developer">Developer: {game.developer}</div>
+            <h5 className="publisher">Publisher: <span className="text">{game.publisher}</span></h5>
+            <h5 className="developer">Developer: <span className="text">{game.developer}</span></h5>
           </div>
-          <div className="long-description">{game.description}</div>
+          <div className="long-description">
+          <h5 className="title">Description</h5>
+          <span className="text">{game.description}</span>
+          </div>
           <div className="screenshots">
             <div
               id="carouselExampleControls"
@@ -99,7 +103,19 @@ export default function Game({ gameID }) {
               </a>
             </div>
           </div>
-          <div className="min-system-requirements"></div>
+          <div className="min-system-requirements">
+          <h3 className="title">System Requirements</h3>
+            {!game.minimum_system_requirements && <p>No Data Found</p>}
+            {game.minimum_system_requirements && <>
+            <div className="os">OS:<span className="text"> {game.minimum_system_requirements.os}</span></div>
+            <div className="processor">Processor:<span className="text"> {game.minimum_system_requirements.processor}</span></div>
+            <div className="memory">Memory:<span className="text"> {game.minimum_system_requirements.memory}</span></div>
+            <div className="graphics">Graphics: <span className="text">{game.minimum_system_requirements.graphics}</span></div>
+            <div className="storage">Storage: <span className="text">{game.minimum_system_requirements.storage}</span></div>
+
+
+            </>}
+          </div>
         </div>
       )}
     </div>
