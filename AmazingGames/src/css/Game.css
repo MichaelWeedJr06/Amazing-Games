@@ -1,0 +1,25 @@
+.title {
+  color: lightgreen;
+  font-weight: bold;
+}
+.no_data {
+  color: red;
+  font-weight: bold;
+}
+.title-game {
+  justify-self: center;
+  font-size: xx-large;
+  color: purple;
+  padding-bottom: 1px;
+  border-bottom: 2px solid purple;
+  border-top: 2px solid purple;
+}
+.thumbnail {
+  padding-top: 10px;
+}
+.container-game {
+  background-color: teal;
+}
+.screenshots {
+  padding-bottom: 5px;
+}
