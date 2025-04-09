@@ -1,25 +1,37 @@
-.title {
-  color: lightgreen;
-  font-weight: bold;
-}
-.no_data {
-  color: red;
-  font-weight: bold;
-}
-.title-game {
-  justify-self: center;
+.game-title {
   font-size: xx-large;
-  color: purple;
-  padding-bottom: 1px;
-  border-bottom: 2px solid purple;
-  border-top: 2px solid purple;
+  font-weight: bold;
+  color: burlywood;
+  justify-self: center;
 }
-.thumbnail {
-  padding-top: 10px;
+.text {
+  color: beige;
 }
-.container-game {
+.container {
   background-color: teal;
+  justify-items: center;
 }
-.screenshots {
-  padding-bottom: 5px;
+.links > a {
+  text-decoration: none;
+  color: chartreuse;
+  justify-self: center;
+}
+.links {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+.game_url {
+  padding-right: 15px;
+}
+.title {
+  color: burlywood;
+  justify-self: center;
+}
+
+.title-req {
+  color: blueviolet;
+
+  justify-content: center;
 }

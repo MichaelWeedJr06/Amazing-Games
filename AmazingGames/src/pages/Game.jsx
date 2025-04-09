@@ -30,8 +30,8 @@ export default function Game({ gameID }) {
       {loading ? (
         <div className="loading">Loading....</div>
       ) : (
-        <div className="container container-game">
-          <div className="title-game">{game.title}</div>
+        <div className="container">
+          <div className="game-title">{game.title}</div>
           <div className="thumbnail">
             <img
               src={game.thumbnail}
@@ -39,8 +39,11 @@ export default function Game({ gameID }) {
               className="thumbnail-img"
             />
           </div>
-          <div className="links row">
-            <a href={game.game_url} className="game_url">
+          <h5 className="genre title">
+            Genre: <span className="text">{game.genre}</span>
+          </h5>
+          <div className="links">
+            <a className="game_url" href={game.game_url}>
               Game Url
             </a>
 
@@ -48,109 +51,117 @@ export default function Game({ gameID }) {
               Free to Game {game.title}'s game profile
             </a>
           </div>
-          <div className="genre">
-            <span className="title">Genre:</span> {game.genre}
+          <div className="release-date-and-platform title">
+            <h5 className="release-date">
+              Release Date: <span className="text">{game.release_date}</span>
+            </h5>
+            <h5 className="platform">
+              Platform: <span className="text">{game.platform}</span>
+            </h5>
           </div>
-          <div className="release-date-and-platform">
-            <div className="release-date">
-              <span className="title">Release Date:</span> {game.release_date}
-            </div>
-            <div className="platform">
-              <span className="title">Platform: </span>
-              {game.platform}
-            </div>
-          </div>
-          <div className="publisher-and-developer">
-            <div className="publisher">
-              <span className="title">Publisher:</span> {game.publisher}
-            </div>
-            <div className="developer">
-              <span className="title">Developer:</span> {game.developer}
-            </div>
+          <div className="publisher-and-developer title">
+            <h5 className="publisher">
+              Publisher: <span className="text">{game.publisher}</span>
+            </h5>
+            <h5 className="developer">
+              Developer: <span className="text">{game.developer}</span>
+            </h5>
           </div>
           <div className="long-description">
-            <h3 className="title">Description</h3>
-            {game.description}
+            <h5 className="title">Description</h5>
+            <span className="text">{game.description}</span>
           </div>
-          <div className="screenshots">
-            <h3 className="title">Screenshots</h3>
-            <div
-              id="carouselExampleControls"
-              className="carousel slide"
-              data-ride="carousel"
-            >
-              <div className="carousel-inner">
-                {game.screenshots.map((screenshot, i) => (
-                  <div className="carousel-item active" key={i}>
-                    <img
-                      key={i}
-                      className="d-block w-100"
-                      src={screenshot.image}
-                      alt={screenshot.id}
-                    />
-                  </div>
-                ))}
+          {game.screenshots?.length > 0 && (
+            <div className="game-screenshots my-4">
+              <h3>Screenshots</h3>
+              <div
+                id="screenshotsCarousel"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div className="carousel-inner">
+                  {game.screenshots.map((screenshot, index) => (
+                    <div
+                      className={`carousel-item ${index === 0 ? "active" : ""}`}
+                      key={screenshot.id}
+                    >
+                      <img
+                        src={screenshot.image}
+                        className="d-block w-100"
+                        alt={`Screenshot ${index + 1}`}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#screenshotsCarousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#screenshotsCarousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
               </div>
-              <a
-                className="carousel-control-prev"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="sr-only">Previous</span>
-              </a>
-              <a
-                className="carousel-control-next"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="sr-only">Next</span>
-              </a>
             </div>
-          </div>
+          )}
           <div className="min-system-requirements">
             <h3 className="title">System Requirements</h3>
-            {game.minimum_system_requirements &&
-              SysRequire(game.minimum_system_requirements)}
-            {!game.minimum_system_requirements && (
-              <p className="no_data">No System Data Found</p>
+            {!game.minimum_system_requirements && <p>No Data Found</p>}
+            {game.minimum_system_requirements && (
+              <>
+                <div className="os title-req">
+                  OS:
+                  <span className="text">
+                    {game.minimum_system_requirements.os}
+                  </span>
+                </div>
+                <div className="processor title-req">
+                  Processor:
+                  <span className="text">
+                    {" "}
+                    {game.minimum_system_requirements.processor}
+                  </span>
+                </div>
+                <div className="memory title-req">
+                  Memory:
+                  <span className="text">
+                    {" "}
+                    {game.minimum_system_requirements.memory}
+                  </span>
+                </div>
+                <div className="graphics title-req">
+                  Graphics:{" "}
+                  <span className="text">
+                    {game.minimum_system_requirements.graphics}
+                  </span>
+                </div>
+                <div className="storage title-req">
+                  Storage:
+                  <span className="text">
+                    {game.minimum_system_requirements.storage}
+                  </span>
+                </div>
+              </>
             )}
           </div>
         </div>
       )}
-    </div>
-  );
-}
-function SysRequire(gameReq) {
-  return (
-    <div className="requirements">
-      <h3 className="os">
-        <span className="title">OS:</span> {gameReq.os}
-      </h3>
-      <h3 className="processor">
-        <span className="title">Processor:</span> {gameReq.processor}
-      </h3>
-      <h3 className="memory">
-        <span className="title">Memory: </span>
-        {gameReq.memory}
-      </h3>
-      <h3 className="graphics">
-        <span className="title">Graphics: </span>
-        {gameReq.graphics}
-      </h3>
-      <h3 className="storage">
-        <span className="title">Storage: </span>
-        {gameReq.storage}
-      </h3>
     </div>
   );
 }

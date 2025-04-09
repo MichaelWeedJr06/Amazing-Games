@@ -1,5 +1,10 @@
-export async function getGames() {
-  const url = "https://free-to-play-games-database.p.rapidapi.com/api/games";
+export async function getGames(category) {
+  let url = "";
+  if (category != "") {
+    url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`;
+  } else {
+    url = "https://free-to-play-games-database.p.rapidapi.com/api/games";
+  }
   const options = {
     method: "GET",
     headers: {
@@ -35,3 +40,5 @@ export async function getGame(gameID) {
     console.error(err);
   }
 }
+
+

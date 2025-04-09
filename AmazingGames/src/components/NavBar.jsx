@@ -2,13 +2,14 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Make sure Bootstrap CSS is imported
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Make sure Bootstrap JS is imported (this includes Popper.js for dropdowns)
 import "../css/NavBar.css";
+import { Link } from "react-router";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light MyNav">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="Nav-links-web-title" to="/home">
           Amazing Games
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -23,13 +24,13 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="myNavbar">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <Link className="Nav-links" to="/home">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle Nav-links"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -54,9 +55,9 @@ function Navbar() {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="Nav-links" to="/categories">
                 Categories
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
