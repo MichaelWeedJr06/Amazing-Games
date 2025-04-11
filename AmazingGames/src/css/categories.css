@@ -6,3 +6,7 @@
   align-content: center;
   font-size: x-large;
 }
+.link-cat {
+  color: crimson;
+  text-decoration: none;
+}

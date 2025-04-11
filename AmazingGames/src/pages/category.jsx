@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getGames } from "../services/api";
 import GameCard from "../components/GameCard";
+import "../css/category.css";
 export default function Category({ category }) {
   const [games, setGames] = useState([]);
   const [error, setError] = useState(null);
@@ -25,7 +26,7 @@ export default function Category({ category }) {
   if (error != null) return <p>error:{error}</p>;
   return (
     <>
-      <div className="title">{category}</div>
+      <div className="title-category">{category}</div>
       <div className="grid">
         {games.map((game, i) => (
           <GameCard key={i} gameData={game} />

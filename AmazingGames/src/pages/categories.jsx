@@ -56,14 +56,16 @@ export default function Categories() {
       <h1 className="title">Categories</h1>
       {categoryList.map((category, i) => (
         <div className="card card-cat" key={i}>
-          <button
-            className="btn btn-lg btn-cat"
-            onClick={() => {
-              setCategoryI(category);
-            }}
-          >
-            <Link to={`/categories/${category}`}>{category}</Link>
-          </button>
+          <Link to={`/categories/${category}`} className="link-cat">
+            <button
+              className="btn btn-lg btn-cat"
+              onClick={() => {
+                setCategoryI(category);
+              }}
+            >
+              {category}
+            </button>
+          </Link>
         </div>
       ))}
     </div>
