@@ -22,3 +22,16 @@
 .game_url{
     padding-right: 15px;
 }
+.description-title{
+    justify-self: center;
+}
+.title{
+    justify-items: center;
+    color:red;
+}
+.long-description{
+    padding-bottom: 10px;
+}
+.min-system-requirements{
+    padding-bottom: 10px;
+}

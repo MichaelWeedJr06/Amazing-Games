@@ -13,9 +13,10 @@ function GameWrapper() {
 function App() {
   return (
     <div className="page">
-      <NavBar />
+      
       <BrowserRouter>
-        <Routes>
+      <NavBar />
+        <Routes >
           <Route path="/home" element={<Home />} />
           <Route path="/game/:id" element={<GameWrapper />} />
         </Routes>

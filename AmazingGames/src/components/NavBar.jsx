@@ -2,13 +2,13 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Make sure Bootstrap CSS is imported
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Make sure Bootstrap JS is imported (this includes Popper.js for dropdowns)
 import "../css/NavBar.css";
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light MyNav">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Amazing Games
-        </a>
+      <Link to="/home" className="navbar-brand">Amazing Games</Link>
+       
         <button
           className="navbar-toggler"
           type="button"

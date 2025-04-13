@@ -38,7 +38,6 @@ export default function Game({ gameID }) {
               className="thumbnail-img"
             />
           </div>
-          <h5 className="genre">Genre: <span className="text">{game.genre}</span></h5>
           <div className="links">
             <a className="game_url" href={game.game_url}>Game Url</a>
 
@@ -46,18 +45,21 @@ export default function Game({ gameID }) {
               Free to Game {game.title}'s game profile
             </a>
           </div>
-          <div className="release-date-and-platform">
+          <div className="title">
+          <h5 className="title genre">Genre: <span className="text">{game.genre}</span></h5>
+          </div>
+          <div className="title release-date-and-platform">
             <h5 className="release-date">
               Release Date: <span className="text">{game.release_date}</span>
             </h5>
             <h5 className="platform">Platform: <span className="text">{game.platform}</span></h5>
           </div>
-          <div className="publisher-and-developer">
+          <div className="title publisher-and-developer">
             <h5 className="publisher">Publisher: <span className="text">{game.publisher}</span></h5>
             <h5 className="developer">Developer: <span className="text">{game.developer}</span></h5>
           </div>
           <div className="long-description">
-          <h5 className="title">Description</h5>
+          <h5 className="title description-title">Description</h5>
           <span className="text">{game.description}</span>
           </div>
           <div className="screenshots">
