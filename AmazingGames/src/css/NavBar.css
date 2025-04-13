@@ -1,3 +1,20 @@
 .MyNav {
   background-color: lightcoral;
 }
+.Nav-links-web-title {
+  text-decoration: none;
+  color: burlywood;
+  font-size: x-large;
+  padding-right: 15px;
+  justify-self: center;
+  align-self: center;
+}
+.Nav-links {
+  text-decoration: none;
+  color: burlywood;
+  font-size: large;
+  padding-right: 15px;
+  justify-self: center;
+  align-self: center;
+  padding-bottom: 0;
+}

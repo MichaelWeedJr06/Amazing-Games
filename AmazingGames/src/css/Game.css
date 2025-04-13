@@ -1,37 +1,37 @@
-.game-title{
-    font-size: xx-large;
-    font-weight: bold;
-    color:burlywood;
-    justify-self: center
+.game-title {
+  font-size: xx-large;
+  font-weight: bold;
+  color: burlywood;
+  justify-self: center;
 }
-.text{
-    color:beige;
+.text {
+  color: beige;
 }
-.container{
-    background-color: teal;
-  }
-.links>a{
-    text-decoration: none;
-    color:brown
+.container {
+  background-color: teal;
+  justify-items: center;
 }
-.links{
-    display:inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.links > a {
+  text-decoration: none;
+  color: chartreuse;
+  justify-self: center;
 }
-.game_url{
-    padding-right: 15px;
+.links {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-self: center;
 }
-.description-title{
-    justify-self: center;
+.game_url {
+  padding-right: 15px;
 }
-.title{
-    justify-items: center;
-    color:red;
+.title {
+  color: burlywood;
+  justify-self: center;
 }
-.long-description{
-    padding-bottom: 10px;
-}
-.min-system-requirements{
-    padding-bottom: 10px;
+
+.title-req {
+  color: blueviolet;
+
+  justify-content: center;
 }

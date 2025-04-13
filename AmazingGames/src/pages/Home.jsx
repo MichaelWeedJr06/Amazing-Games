@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const GetGames = async () => {
       try {
-        const response = await getGames();
+        const response = await getGames("");
         setGames(response);
       } catch (err) {
         setError("Failed to load games : Home.jsx, line 10");
