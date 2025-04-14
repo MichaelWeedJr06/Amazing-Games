@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Game from "./pages/Game";
 import Categories from "./pages/categories";
 import Category from "./pages/category";
+import { FilterProvider } from "./context/FilterContext";
 
 function GameWrapper() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ function CategoriesWrapper() {
 
 function App() {
   return (
-    <div className="page">
+    <FilterProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -29,7 +30,7 @@ function App() {
           <Route path="/categories/:category" element={<CategoriesWrapper />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </FilterProvider>
   );
 }
 

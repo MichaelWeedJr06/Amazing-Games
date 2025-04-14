@@ -1,7 +1,11 @@
-export async function getGames(category) {
+export async function getGames(category, filter) {
   let url = "";
-  if (category != "") {
+  if (category != "" && filter == "") {
     url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}`;
+  } else if (filter != "" && category == "") {
+    url = `https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=${filter}`;
+  } else if (filter != "" && category != "") {
+    url = `https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=${filter}?category=${category}`;
   } else {
     url = "https://free-to-play-games-database.p.rapidapi.com/api/games";
   }
@@ -40,5 +44,3 @@ export async function getGame(gameID) {
     console.error(err);
   }
 }
-
-
