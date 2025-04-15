@@ -1,0 +1,37 @@
+.game-title {
+  font-size: xx-large;
+  font-weight: bold;
+  color: burlywood;
+  justify-self: center;
+}
+.text {
+  color: beige;
+}
+.container {
+  background-color: teal;
+  justify-items: center;
+}
+.links > a {
+  text-decoration: none;
+  color: chartreuse;
+  justify-self: center;
+}
+.links {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+.game_url {
+  padding-right: 15px;
+}
+.title {
+  color: burlywood;
+  justify-self: center;
+}
+
+.title-req {
+  color: blueviolet;
+
+  justify-content: center;
+}
